@@ -14,3 +14,10 @@ def test_delete():
     except:
         print("Test delete failed.")
         
+def test_show():
+    try:
+        show()
+        print("Test show successful!")
+    except:
+        print("Test show failed.")
+        
