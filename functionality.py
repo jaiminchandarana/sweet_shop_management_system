@@ -43,3 +43,11 @@ def purchase(name,quantity):
         conn.close()
     except:
         print("Your desiderd product has low stock than your need.")
+
+def restock(name,quantity):
+    conn = connection()
+    cur = conn.cursor()
+    cur.execute("UPDATE incubyte SET quantity = quantity +  %s WHERE name = %s",(quantity,name))
+    conn.commit()
+    cur.close()
+    conn.close()
