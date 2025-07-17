@@ -20,7 +20,7 @@ def test_show():
         print("Test show successful!")
     except:
         print("Test show failed.")
-
+        
 def test_purchase():
     try:
         purchase("test",12)
@@ -41,10 +41,19 @@ def test_search():
         print("Test search successful!")
     except:
         print("Test search failed.")
-        
+
 def test_sort():
     try:
         sort('name','desc')
         print("Test sort successful!")
     except:
         print("Test sort failed.")
+        
+if __name__ == "__main__":
+    test_add()
+    test_purchase()
+    test_restock()
+    test_search()
+    test_show()
+    test_sort()
+    test_delete()

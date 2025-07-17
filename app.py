@@ -35,7 +35,7 @@ elif choice == "Purchase Sweet":
 
     if st.button("Purchase"):
         purchase(pname, qty)
-        st.success(f"Sweet {qty} Purchased of {pname}.")
+        st.success(f"{qty} Purchased of {pname}.")
 
 elif choice == "Restock Sweet":
     st.header("Restock Sweet")
@@ -44,7 +44,7 @@ elif choice == "Restock Sweet":
 
     if st.button("Restock"):
         restock(pname, qty)
-        st.success(f"Sweet {qty} Restocked of {pname}.")
+        st.success(f"{qty} Restocked of {pname}.")
 
 elif choice == "Delete Sweet":
     st.header("Delete Sweet")

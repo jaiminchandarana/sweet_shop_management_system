@@ -9,7 +9,7 @@ def add(name,category,price,quantity):
         cur.close()
         conn.close()
     except:
-        print("Product already exist, try restocking or adding new one.")
+        print("Sweet already exist, try adding new one.")
 
 def delete(name):
     try:
@@ -20,34 +20,33 @@ def delete(name):
         cur.close()
         conn.close()
     except Exception as e:
-        print("This is product is not in stock.")
+        print("This sweet is not in stock.")
         
 def show():
     conn = connection()
     cur = conn.cursor()
     cur.execute("SELECT name,category,price,quantity FROM incubyte")
     rows = cur.fetchall()
-    for row in rows:
-        return row 
     conn.commit()
     cur.close()
     conn.close()
+    return rows
     
 def purchase(name,quantity):
     try:
         conn = connection()
         cur = conn.cursor()
-        cur.execute("UPDATE incubyte SET quantity = quantity - %s WHERE name = %s",(quantity,name))
+        cur.execute("UPDATE incubyte SET quantity = quantity - %s WHERE name = %s",(quantity,name,))
         conn.commit()
         cur.close()
         conn.close()
     except:
-        print("Your desiderd product has low stock than your need.")
+        print("Your desiderd sweet has low stock than your need.")
 
 def restock(name,quantity):
     conn = connection()
     cur = conn.cursor()
-    cur.execute("UPDATE incubyte SET quantity = quantity +  %s WHERE name = %s",(quantity,name))
+    cur.execute("UPDATE incubyte SET quantity = quantity +  %s WHERE name = %s",(quantity,name,))
     conn.commit()
     cur.close()
     conn.close()
@@ -72,7 +71,9 @@ def sort(field,type):
         print("Please select from list.")
     elif type not in mode:
         print("Please select from list.")
-    cur.execute(f"SELECT name,category,price,quantity FROM incubyte ORDER BY {field} {type.upper()}",(field,type.upper()))
+    cur.execute(f"SELECT name,category,price,quantity FROM incubyte ORDER BY {field} {type.upper()}")
+    rows = cur.fetchall()
     conn.commit()
     cur.close()
     conn.close()
+    return rows
