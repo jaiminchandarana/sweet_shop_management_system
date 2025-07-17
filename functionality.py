@@ -32,3 +32,14 @@ def show():
     conn.commit()
     cur.close()
     conn.close()
+    
+def purchase(name,quantity):
+    try:
+        conn = connection()
+        cur = conn.cursor()
+        cur.execute("UPDATE incubyte SET quantity = quantity - %s WHERE name = %s",(quantity,name))
+        conn.commit()
+        cur.close()
+        conn.close()
+    except:
+        print("Your desiderd product has low stock than your need.")
