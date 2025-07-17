@@ -27,3 +27,10 @@ def test_purchase():
         print("Test purchase successful!")
     except:
         print("Test purchase failed.")
+        
+def test_restock():
+    try:
+        restock("test",12)
+        print("Test restock successful!")
+    except:
+        print("Test restock failed.")
