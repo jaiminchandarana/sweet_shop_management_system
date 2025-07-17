@@ -51,3 +51,14 @@ def restock(name,quantity):
     conn.commit()
     cur.close()
     conn.close()
+    
+def search(name):
+    conn = connection()
+    cur = conn.cursor()
+    cur.execute("SELECT name,category,price,quantity FROM incubyte where name ILIKE %s OR category ILIKE %s OR CAST(price AS TEXT) ILIKE %s",(name,name,name))
+    rows = cur.fetchall()
+    for row in rows:
+        return row
+    conn.commit()
+    cur.close()
+    conn.close()
