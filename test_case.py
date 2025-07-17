@@ -41,3 +41,10 @@ def test_search():
         print("Test search successful!")
     except:
         print("Test search failed.")
+        
+def test_sort():
+    try:
+        sort('name','desc')
+        print("Test sort successful!")
+    except:
+        print("Test sort failed.")
