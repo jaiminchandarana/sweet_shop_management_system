@@ -51,3 +51,44 @@ pip install -r requirements.txt
 3.  **Run `app.py`**:
 
 - Open your IDE and execute `streamlit run app.py` in terminal to run sweet shop management system.
+
+
+
+## Test report
+
+
+
+1.  **`Test_add`**:
+
+- Adds a test sweet to inventory.
+- **Test result** : Test add successful !
+
+
+2.  **`Test_delete`**:
+- Deletes the test sweet from inventory.
+- **Test result** : Test delete successful !
+
+
+3.  **`Test_show`**:
+- Displays all sweets from inventory.
+- **Test result** : Test show successful !
+
+
+4.  **`Test_purchase`**:
+- Purchases specified quantity of sweet.
+- **Test result** : Test purchase successful !
+
+  
+5.  **`Test_restock`**:
+- Restocks specified quantity of sweet.
+- **Test result** : Test restock successful !
+
+
+6.  **`Test_search`**:
+- Searches for sweet in inventory.
+- **Test result** : Test search successful !
+
+
+7.  **`Test_sort`**:
+- Sorts inventory by sweet name, category or price.
+- **Test result** : Test sort successful !
