@@ -20,4 +20,10 @@ def test_show():
         print("Test show successful!")
     except:
         print("Test show failed.")
-        
+
+def test_purchase():
+    try:
+        purchase("test",12)
+        print("Test purchase successful!")
+    except:
+        print("Test purchase failed.")
