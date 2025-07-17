@@ -34,3 +34,10 @@ def test_restock():
         print("Test restock successful!")
     except:
         print("Test restock failed.")
+        
+def test_search():
+    try:
+        search("test")
+        print("Test search successful!")
+    except:
+        print("Test search failed.")
