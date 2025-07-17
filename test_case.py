@@ -6,3 +6,11 @@ def test_add():
         print("Test add successful!")
     except:
         print("Test add failed.")
+        
+def test_delete():
+    try:
+        delete("test")
+        print("Test delete successful!")
+    except:
+        print("Test delete failed.")
+        
