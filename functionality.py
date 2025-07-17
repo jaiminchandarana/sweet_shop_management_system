@@ -62,3 +62,17 @@ def search(name):
     conn.commit()
     cur.close()
     conn.close()
+
+def sort(field,type):
+    conn = connection()
+    cur = conn.cursor()
+    value = ["name","category","price"]
+    mode = ["asc","desc"]
+    if field not in value:
+        print("Please select from list.")
+    elif type not in mode:
+        print("Please select from list.")
+    cur.execute(f"SELECT name,category,price,quantity FROM incubyte ORDER BY {field} {type.upper()}",(field,type.upper()))
+    conn.commit()
+    cur.close()
+    conn.close()
