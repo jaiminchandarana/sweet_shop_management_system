@@ -4,8 +4,8 @@ def connection():
     conn = psycopg2.connect(
         host = "localhost",
         database = "INCUBYTE",
-        user = "postgres",
-        password = "JDCpostgres.@",
+        user = "",
+        password = "",
         port = 5432
     )
     return conn
